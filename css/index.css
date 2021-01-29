@@ -1,0 +1,392 @@
+/** RESET **/
+
+*{
+    margin:0;
+    padding:0;
+    border:0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style-type: none;
+}
+
+a{
+    display: block;
+    text-decoration: none;
+    color: var(--negro-textos);
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    color: var(--negro-textos);
+}
+
+/** VARIABLES **/
+
+:root{
+    --negro-textos: black;
+    --gris-submenu: #272727;
+    --gris-hover: grey;
+    --fondo-general: white;
+    --fondo-header: white;
+    --fondo-footer: white;
+}
+
+/** HEADER Y MENU PRINCIPAL **/
+
+.header{
+    width: 100%;
+    background-color: var(--fondo-header);
+    padding: 40px 0;
+}
+
+.header .logo{
+    width: 100px;
+    height: 24px;
+    text-indent: -9999px;
+
+    display: flex;
+    background: url(../assets/img/logo.svg);
+    background-repeat: no-repeat;
+}
+
+.header .centrado{
+    width: 75%;
+    margin: auto;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: initial;
+}
+
+.header .nav{
+    width: calc( 100% - 50px );
+    display: flex;
+}
+
+.header .ul{
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: initial;
+}
+
+.header .li{
+    margin: 0 0 0 3%;
+
+    font-size: 0.9em;
+    font-weight: 600;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+    position: relative;
+}
+
+.header .item-menu:hover{
+    color: var(--gris-hover);
+    display: block;
+
+}
+
+/** SUBMENU ORDENADOR **/
+
+.header .li:hover .ul2{
+    display: block;
+
+    pointer-events: visible;
+    opacity: 100%;
+    transition: all 0.9s ease;
+}
+
+.header .ul2{
+    min-width: 18em;
+    border-top: solid 12px var(--fondo-header);
+    
+    position: absolute;
+    background-color: var(--gris-submenu);
+    padding: 0 1em;
+    pointer-events: none;
+
+    opacity: 0%;
+}
+
+.header .li2 .subitem-menu{
+    margin: 1em 0;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--fondo-header);
+}
+
+.header .li2 .subitem-menu:hover{
+    color: var(--gris-hover);
+}
+
+/** OCULTAR MENU MOVIL ORDENADOR **/
+
+.header .fas{
+    display: none;
+}
+
+/** MAIN: BANNER PRINCIPAL **/
+
+.main .banner{
+    width: 100%;
+    min-height: 100vh;
+
+    background-image: url(../assets/img/bg.jpg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: initial;
+}
+
+.main .h2{
+    text-indent: -9999px;
+}
+
+.main .banner-logo{
+    width: 90%;
+
+    max-width: 760px;
+    min-height: 50px;
+    margin: auto;
+    margin-top: 11em;
+}
+
+/** MAIN: COLUMNAS **/
+
+.main{
+    background-color: var(--fondo-general);
+}
+
+.main .centrado{
+    width: 100%;
+    margin: 9em 0;
+}
+
+.main .p{
+    width: 100%;
+    margin-top: 2.5em;
+
+    font-size: 0.8em;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.main .columnas{
+    width: 75%;
+    margin: auto;
+    align-items: top;
+
+    display: grid;
+    grid-template-columns: repeat( 3 , 1fr );
+    gap: 1em;
+}
+
+.main .col:hover{
+    color: var(--gris-hover);
+}
+
+/** FOOTER **/
+
+.footer{
+    width: 100%;
+    margin: auto;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: initial;
+
+    background-color: var(--fondo-footer);
+}
+
+.footer .rrss{
+    width: 100%;
+    margin: 4em auto;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: initial;
+}
+
+.footer .rrss .red{
+    width: 1.8em;
+    height: 1.8em;
+    margin: 0 0.5em;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: initial;
+}
+
+.footer .fa{
+    font-size: 1.7em;
+    color: var(--negro-textos);
+}
+
+.footer .fab{
+    font-size: 1.6em;
+    color: var(--negro-textos);
+}
+
+.footer .fa:hover , .fab:hover{
+    color: var(--gris-hover);
+}
+
+.footer .legal{
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: initial;
+
+    font-size: 0.9em;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3.5px;
+    color: var(--negro-textos);
+}
+
+.footer .enlaces{
+    margin: 0.2em 0;
+    border-bottom: 1px solid #00000050;
+}
+
+.footer .enlaces:hover{
+    border-bottom: 1px solid var(--gris-hover);
+    color: var(--gris-hover);
+
+}
+
+.copy{
+    width: 100%;
+    max-width: 760px;
+    margin-top: 1.4em;
+    margin-bottom: 5.8em;
+
+    font-size: 0.9em;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3.5px;
+    color: var(--negro-textos);
+}
+
+
+@media screen and (max-width: 800px){
+
+        /** @media columnas **/
+
+    .main .centrado{
+        margin: 4em 0;
+    }
+
+    .main .columnas{
+        grid-template-columns: repeat( 1 , 1fr );
+        gap: 2.5em
+    }
+}
+
+@media screen and (max-width: 1100px){
+
+    /** @media menu movil **/
+
+    .header{
+        position: relative;
+    }
+
+    .header .fas{
+        font-size: 1.3em;
+        color: var(--gris-submenu);
+    
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        align-content: initial;
+        cursor: pointer;
+    }
+
+    .header .fas:hover{
+        color: var(--gris-hover);
+    }
+
+    .header .nav{
+        width: 100%;
+        background-color: var(--fondo-header);
+        padding-bottom: 50px;
+
+        position: absolute;
+        top: 90px;
+        left: 0;
+        opacity: 0;
+        transition: all 0.5s ease;
+        transform: translateX(-100%);
+    }
+
+    .header .nav.ver{
+        display: flex;
+        opacity: 1;
+
+        transform: translateX(0%);
+    }
+    
+    .header .ul{
+        width: 75%;
+        margin: auto;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header .li{
+        margin: 1em 0;
+    }
+
+    /** Aquí me faltó hacer los submenu en .js de la versión movil **/
+
+    .header .ul2 , .li2 , .subitem-menu{
+        display: none;
+    }
+
+    /** ----------------------------------------- **/
+
+}
+
+@media screen and (max-width: 1200px){
+
+    .header .ul{
+        font-size: 0.9em;
+        letter-spacing: 1px;
+    }
+}
