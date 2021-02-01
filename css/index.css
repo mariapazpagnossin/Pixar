@@ -12,20 +12,21 @@ li{
 }
 
 a{
+    color: var(--negro-textos);
     display: block;
     text-decoration: none;
-    color: var(--negro-textos);
 }
 
-img {
+img{
     width: 100%;
     display: block;
     object-fit: cover;
 }
 
 body{
-    font-family: 'Open Sans', sans-serif;
     color: var(--negro-textos);
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--fondo-general);
 }
 
 /** VARIABLES **/
@@ -37,6 +38,7 @@ body{
     --fondo-general: white;
     --fondo-header: white;
     --fondo-footer: white;
+    --linea-footer: #00000050
 }
 
 /** HEADER Y MENU PRINCIPAL **/
@@ -45,16 +47,12 @@ body{
     width: 100%;
     background-color: var(--fondo-header);
     padding: 40px 0;
+    margin: 0;
+    position: relative;
 }
 
-.header .logo{
-    width: 100px;
-    height: 24px;
-    text-indent: -9999px;
-
-    display: flex;
-    background: url(../assets/img/logo.svg);
-    background-repeat: no-repeat;
+.h1{
+    position: absolute;
 }
 
 .header .centrado{
@@ -66,6 +64,12 @@ body{
     justify-content: space-between;
     align-items: center;
     align-content: initial;
+}
+
+.header .logo{
+    width: 120px;
+    max-height: 23px;
+    object-fit: contain;
 }
 
 .header .nav{
@@ -113,22 +117,22 @@ body{
 
 .header .ul2{
     min-width: 18em;
-    border-top: solid 12px var(--fondo-header);
-    
-    position: absolute;
     background-color: var(--gris-submenu);
     padding: 0 1em;
-    pointer-events: none;
+    border-top: solid 12px var(--fondo-header);
 
+    pointer-events: none;
     opacity: 0%;
+    position: absolute;
 }
 
 .header .li2 .subitem-menu{
     margin: 1em 0;
+    color: white;
+
     text-align: left;
     font-weight: 600;
     letter-spacing: 2px;
-    color: var(--fondo-header);
 }
 
 .header .li2 .subitem-menu:hover{
@@ -159,15 +163,11 @@ body{
     align-content: initial;
 }
 
-.main .h2{
-    text-indent: -9999px;
-}
-
 .main .banner-logo{
     width: 90%;
-
     max-width: 760px;
     min-height: 50px;
+
     margin: auto;
     margin-top: 11em;
 }
@@ -183,7 +183,7 @@ body{
     margin: 9em 0;
 }
 
-.main .p{
+.main .h2{
     width: 100%;
     margin-top: 2.5em;
 
@@ -197,9 +197,9 @@ body{
 .main .columnas{
     width: 75%;
     margin: auto;
-    align-items: top;
 
     display: grid;
+    align-items: top;
     grid-template-columns: repeat( 3 , 1fr );
     gap: 1em;
 }
@@ -213,14 +213,13 @@ body{
 .footer{
     width: 100%;
     margin: auto;
+    background-color: var(--fondo-footer);
 
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     align-content: initial;
-
-    background-color: var(--fondo-footer);
 }
 
 .footer .rrss{
@@ -234,7 +233,7 @@ body{
     align-content: initial;
 }
 
-.footer .rrss .red{
+.footer .red{
     width: 1.8em;
     height: 1.8em;
     margin: 0 0.5em;
@@ -247,13 +246,13 @@ body{
 }
 
 .footer .fa{
-    font-size: 1.7em;
     color: var(--negro-textos);
+    font-size: 1.7em;
 }
 
 .footer .fab{
-    font-size: 1.6em;
     color: var(--negro-textos);
+    font-size: 1.6em;
 }
 
 .footer .fa:hover , .fab:hover{
@@ -280,14 +279,21 @@ body{
 }
 
 .footer .enlaces{
-    margin: 0.2em 0;
-    border-bottom: 1px solid #00000050;
+    margin: 0.3em 0;
+    border-bottom: 1px solid var(--linea-footer);
+}
+
+.footer .barra{
+    width: 1px;
+    height: 20px;
+    margin: 0 0.7em;
+    background-color: var(--linea-footer);
+    display: block;
 }
 
 .footer .enlaces:hover{
-    border-bottom: 1px solid var(--gris-hover);
     color: var(--gris-hover);
-
+    border-bottom: 1px solid var(--gris-hover);
 }
 
 .copy{
@@ -305,31 +311,28 @@ body{
 }
 
 
-@media screen and (max-width: 800px){
+/** @media menu **/
 
-        /** @media columnas **/
+@media screen and (max-width: 1200px){
 
-    .main .centrado{
-        margin: 4em 0;
-    }
-
-    .main .columnas{
-        grid-template-columns: repeat( 1 , 1fr );
-        gap: 2.5em
+    .header .ul{
+        font-size: 0.9em;
+        letter-spacing: 1px;
     }
 }
 
-@media screen and (max-width: 1100px){
 
-    /** @media menu movil **/
+/** @media menu movil **/
+
+@media screen and (max-width: 1100px){
 
     .header{
         position: relative;
     }
 
     .header .fas{
-        font-size: 1.3em;
         color: var(--gris-submenu);
+        font-size: 1.3em;
     
         display: flex;
         flex-flow: row nowrap;
@@ -344,15 +347,16 @@ body{
 
     .header .nav{
         width: 100%;
-        background-color: var(--fondo-header);
         padding-bottom: 50px;
+        background-color: var(--fondo-header);
 
-        position: absolute;
         top: 90px;
         left: 0;
         opacity: 0;
         transition: all 0.5s ease;
         transform: translateX(-100%);
+
+        position: absolute;
     }
 
     .header .nav.ver{
@@ -373,20 +377,39 @@ body{
         margin: 1em 0;
     }
 
-    /** Aquí me faltó hacer los submenu en .js de la versión movil **/
-
     .header .ul2 , .li2 , .subitem-menu{
         display: none;
     }
 
-    /** ----------------------------------------- **/
-
 }
 
-@media screen and (max-width: 1200px){
 
-    .header .ul{
-        font-size: 0.9em;
-        letter-spacing: 1px;
+/** @media columnas **/
+
+@media screen and (max-width: 800px){
+
+    .main .centrado{
+        margin: 4em 0;
     }
+
+    .main .columnas{
+        grid-template-columns: repeat( 1 , 1fr );
+        gap: 2.5em
+    }
+}
+
+
+/** @media modo noche **/
+
+@media (prefers-color-scheme:dark){
+    :root{
+        --negro-textos: white;
+        --gris-submenu: #020101;
+        --gris-hover: grey;
+        --fondo-general: black;
+        --fondo-header: black;
+        --fondo-footer: black;
+        --linea-footer: #ffffff40
+    }
+
 }
