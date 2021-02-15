@@ -1,10 +1,6 @@
-'use strict'
-
-// Cuando hago CLICK en ".fas" a ".nav" toggle ".ver"
-
-const icono = document.querySelector('.fas')
-const nav = document.querySelector('.nav')
-
-icono.addEventListener('click',function(){
-    nav.classList.toggle('ver')
-})
+'use strict';
+var icon = document.querySelector('.header__menumovil');
+var nav = document.querySelector('.header__nav');
+icon.addEventListener('click', function () {
+    nav.classList.toggle('ver');
+});
