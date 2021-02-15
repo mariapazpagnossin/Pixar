@@ -1,12 +1,14 @@
 /** VARIABLES COLOR **/
 
-$negro-textos: black;
-$gris-submenu: #272727;
-$gris-hover: grey;
-$fondo-general: white;
-$fondo-header: white;
-$fondo-footer: white;
-$linea-footer: #00000050;
+:root{
+    --negro-textos: black;
+    --gris-submenu: #272727;
+    --gris-hover: grey;
+    --fondo-general: white;
+    --fondo-header: white;
+    --fondo-footer: white;
+    --linea-footer: #00000050;
+}
 
 /** RESET **/
 
@@ -22,7 +24,7 @@ li{
 }
 
 a{
-    color: $negro-textos;
+    color: var(--negro-textos);
     display: block;
     text-decoration: none;
 }
@@ -34,7 +36,7 @@ img{
 }
 
 body{
-    color: $negro-textos;
+    color: var(--negro-textos);
     font-family: 'Open Sans', sans-serif;
     background-color: $fondo-general;
 }
@@ -54,7 +56,7 @@ body{
     margin: 0;
     padding: 40px 0;
 
-    background-color: $fondo-header;
+    background-color: var(--fondo-header);
     position: relative;
 
     &__center{
@@ -83,7 +85,7 @@ body{
         @media screen and (max-width: 1100px){
             width: 100%;
             padding-bottom: 50px;
-            background-color: $fondo-header;
+            background-color: var(--fondo-header);
                 
             top: 90px;
             left: 0;
@@ -140,15 +142,15 @@ body{
     }
 
     &__item:hover{
-        color: $gris-hover;
+        color: var(--gris-hover);
         display: block;
     }
 
     &__ul2{
         min-width: 18em;
         padding: 0 1em;
-        border-top: solid 12px $fondo-header;
-        background-color: $gris-submenu;
+        border-top: solid 12px var(--fondo-header);
+        background-color: var(--gris-submenu);
 
         pointer-events: none;
         opacity: 0%;
@@ -167,14 +169,14 @@ body{
 
     &__subitem{
         margin: 1em 0;
-        color: $fondo-header;
+        color: white;
 
         text-align: left;
         font-weight: 600;
         letter-spacing: 0.2em;
 
         &:hover{
-            color: $gris-hover;
+            color: var(--gris-hover);
         }
 
         @media screen and (max-width: 1100px){
@@ -190,7 +192,7 @@ body{
     display: none;
 
     @media screen and (max-width: 1100px){
-        color: $gris-submenu;
+        color: var(--negro-textos);
         font-size: 1.3em;
         cursor: pointer;
 
@@ -202,7 +204,7 @@ body{
 /** MAIN: BANNER PRINCIPAL **/
 
 .main{
-    background-color: $fondo-general;
+    background-color: var(--fondo-general);
 
     &__banner{
         width: 100%;
@@ -261,7 +263,7 @@ body{
     }
 
     &__col:hover{
-        color: $gris-hover;
+        color: var(--gris-hover);
     }
 
 }
@@ -293,7 +295,7 @@ body{
     }
 
     &__icon{
-        color: $negro-textos;
+        color: var(--negro-textos);
         font-size: 1.3em;
         &:hover{
             color: var(--gris-hover);
@@ -321,11 +323,11 @@ body{
 
     &__a{
         margin: 0.3em 0;
-        border-bottom: 1px solid $linea-footer;
+        border-bottom: 1px solid var(--linea-footer);
 
         &:hover{
             color: var(--gris-hover);
-            border-bottom: 1px solid $gris-hover;
+            border-bottom: 1px solid var(--gris-hover);
         }
     }
 
@@ -333,7 +335,7 @@ body{
         width: 1px;
         height: 20px;
         margin: 0 0.7em;
-        background-color: $linea-footer;
+        background-color: var(--linea-footer);
         display: block;
     }
 
@@ -348,20 +350,21 @@ body{
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 0.3em;
-        color: $negro-textos;
+        color: var(--negro-textos);
     }
 }
 
-/** @media modo noche **/
+/** MODO NOCHE **/
 
-@media screen and (prefers-color-scheme:dark){
+@media screen and (prefers-color-scheme: dark){
 
-    $negro-textos: white;
-    $gris-submenu: #020101;
-    $gris-hover: grey;
-    $fondo-general: black;
-    $fondo-header: black;
-    $fondo-footer: black;
-    $linea-footer: #ffffff40;
-
+    :root{
+        --negro-textos: white;
+        --gris-submenu: #020101;
+        --gris-hover: grey;
+        --fondo-general: black;
+        --fondo-header: black;
+        --fondo-footer: black;
+        --linea-footer: #ffffff40;
+    }
 }
