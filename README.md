@@ -5,6 +5,7 @@ Práctica para curso de desarrollo web front end.
 - Copia de la web: https://pixar.com
 - Desarrollado con: HTML5, CSS3 y JavaScript.
 - Plus: Se agregó la opción de "Modo noche" al código web.
+- Resultado: https://mariapazpagnossin.github.io/Pixar/
 
 
 ## Autora: María Paz Pagnossin 🔗
