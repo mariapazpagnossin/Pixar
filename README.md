@@ -11,7 +11,8 @@ Práctica para curso de desarrollo web front end.
 ## Autora: María Paz Pagnossin 🔗
 - Github: https://github.com/mariapazpagnossin
 - LinkedIn: https://linkedin.com/in/mariapazpagnossin
-- Contacto: pagnossindesign@gmail.com
+- Behance: https://www.behance.net/mariapazpagnossin
+- Contacto: hola@mariapazpagnossin.com
 
 
 ## Curso Desarrollo Web Front End 📌 
